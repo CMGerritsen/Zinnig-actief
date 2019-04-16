@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Event;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,7 +19,7 @@ class Event1Type extends AbstractType
             ->add('min_part')
             ->add('max_part')
             ->add('description', TextareaType::class, ['attr' => ['name' => 'editor'], ])
-            ->add('image')
+            ->add('image', FileType::class)
             ->add('name')
         ;
     }

@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Location;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,7 +15,7 @@ class LocationType extends AbstractType
         $builder
             ->add('location_name')
             ->add('seats')
-            ->add('image')
+            ->add('image', FileType::class)
         ;
     }
 
